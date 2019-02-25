@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'tippy'
+gem 'tippy-brian'
 ```
 
 And then execute:
@@ -18,11 +18,16 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install tippy
+    $ gem install tippy-brian
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+Tippy::Builder.new(total: 100, gratuity: '23.5').generate # 123.5
+Tippy::Builder.new(total: 100, gratuity: 'high').generate # 125.0
+Tippy::Builder.new(total: 100, gratuity: 'LOW').generate # 115.0
+Tippy::Builder.new(total: 100, gratuity: 20).generate # 120.0
+```
 
 ## Development
 
