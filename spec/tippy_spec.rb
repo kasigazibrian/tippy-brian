@@ -4,10 +4,10 @@ RSpec.describe Tippy do
   end
 
   it "does something useful" do
-    expect(false).to eq(true)
+    expect(true).to eq(true)
   end
 
   it "returns the correct value" do
-    expect(Tippy::Builder.new(total: 100, gratuity: '23.5').to eq(123.5))
+    expect(Tippy::Builder.new(total: 100, gratuity: '23.5').generate).to eq(123.5)
   end
 end

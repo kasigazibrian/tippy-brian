@@ -1,6 +1,14 @@
+class String
+  def integer?
+    return true if self =~ /^[1-9]\d*(\.\d+)?$/
+
+    false
+  end
+end
+
 module Tippy
   # Builder class for the tippy gem
-  class Builder < String
+  class Builder
     def initialize(total:, gratuity:)
       @total = total
       @gratuity = gratuity
@@ -25,7 +33,7 @@ module Tippy
     end
 
     def calculation(gratuity = @gratuity)
-      @total += total * (gratuity.to_f / 100)
+      @total += @total * (gratuity.to_f / 100)
     end
   end
 end
